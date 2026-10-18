@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f3fb;
+  --foreground: #111827;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-strong: rgba(255, 255, 255, 0.95);
+  --surface-muted: #eef0ff;
+  --border: rgba(111, 115, 146, 0.18);
+  --border-strong: rgba(91, 89, 116, 0.3);
+  --muted: #5f6478;
+  --accent: #7a6ef0;
+  --accent-strong: #5843d4;
+  --accent-soft: rgba(122, 110, 240, 0.14);
+  --success: #2d9f73;
+  --warning: #d98e3f;
+  --danger: #d95379;
+  --shadow: 0 18px 48px rgba(31, 28, 62, 0.12);
+}
+
+html[data-theme="dark"] {
+  --background: #0c0d12;
+  --foreground: #edf2ff;
+  --surface: rgba(17, 19, 28, 0.8);
+  --surface-strong: rgba(17, 19, 28, 0.95);
+  --surface-muted: rgba(41, 45, 63, 0.9);
+  --border: rgba(170, 180, 220, 0.17);
+  --border-strong: rgba(170, 180, 220, 0.28);
+  --muted: #b8bed6;
+  --accent: #a694ff;
+  --accent-strong: #c5bcff;
+  --accent-soft: rgba(166, 148, 255, 0.18);
+  --success: #5dd0a0;
+  --warning: #f1be70;
+  --danger: #ff7ca5;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
 }
 
 @theme inline {
@@ -12,15 +43,38 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(122, 110, 240, 0.14), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.2), transparent),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(122, 110, 240, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
