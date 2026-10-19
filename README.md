@@ -1,19 +1,38 @@
 # Aurennis Learn
 
-Aurennis Learn is a small study companion for working with text-based course PDFs. It extracts the document text in your browser and provides a study guide, flashcards, quizzes, and assessments.
+Aurennis Learn is a browser-based study companion for text-based course PDFs. It extracts the document text and turns it into a study guide, flashcards, practice quizzes, and configurable assessments.
+
+## Features
+
+- Upload a PDF by file picker or drag and drop.
+- Extract and preview readable PDF text in the browser.
+- Review a structured guide with key topics and revision priorities.
+- Study interactive flashcards and mark topics for revision.
+- Practise with quick quizzes and configurable assessments.
+- Review assessment scores, answers, and topics to revisit.
+- Choose a light or dark theme and keep session progress in the browser.
+
+## Technology
+
+- Next.js App Router and React
+- TypeScript
+- Tailwind CSS
+- PDF.js for PDF text extraction
+- Zod for request and content validation
+- Vitest for utility tests
 
 ## Run locally
 
-You need Node.js and npm installed.
+Install [Node.js](https://nodejs.org/) first. In a terminal opened at the project folder, run:
 
 ```powershell
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser. Press `Ctrl+C` in the terminal to stop the local server.
+Open [http://localhost:3000](http://localhost:3000). Stop the local development server with `Ctrl+C` in its terminal.
 
-## Check before sharing
+## Quality checks
 
 ```powershell
 npm test
@@ -21,25 +40,13 @@ npm run lint
 npm run build
 ```
 
-## Publish with GitHub and Netlify
+## Deployment
 
-1. Create an empty repository on GitHub. Do not initialize it with a README, license, or `.gitignore`.
-2. In a terminal opened at this project folder, run:
+The application can be deployed to Netlify by importing its GitHub repository. Netlify supports the Next.js App Router and detects the required build configuration.
 
-   ```powershell
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/aurennis-learn.git
-   git push -u origin main
-   ```
+## Limitations and data handling
 
-   Replace `YOUR-USERNAME` with your GitHub username.
-3. In Netlify, import the GitHub repository. Netlify detects Next.js and configures the build for the app.
-4. Each later `git push` can trigger a new Netlify deploy.
-
-## Notes
-
-- Text-based PDFs are supported; image-only scans need OCR and are not processed.
-- Study materials use local text extraction and deterministic, source-derived rules. They are not reviewed by a subject expert, so verify important details against the original document.
-- The PDF text stays in the browser until the study request is sent to this app's server route. The app does not require a third-party model key.
-- Session progress and theme are stored in this browser. The PDF text itself is not saved in browser storage.
-- The project has no account system or cloud-synced progress.
+- Image-only or scanned PDFs are not supported; the document must contain extractable text.
+- Study materials are built with local, rule-based logic and are not reviewed by a subject expert. Check important details against the original PDF.
+- The PDF is not stored in browser storage. Extracted text is sent to this application's study endpoint to create the requested study materials.
+- Theme and session progress are stored in the current browser. There are no user accounts or cloud-synced study records.
