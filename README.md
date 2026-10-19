@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aurennis Learn
 
-## Getting Started
+Aurennis Learn is a small study companion for working with text-based course PDFs. It extracts the document text in your browser and provides a study guide, flashcards, quizzes, and assessments.
 
-First, run the development server:
+## Run locally
 
-```bash
+You need Node.js and npm installed.
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser. Press `Ctrl+C` in the terminal to stop the local server.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Check before sharing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm test
+npm run lint
+npm run build
+```
 
-## Learn More
+## Publish with GitHub and Netlify
 
-To learn more about Next.js, take a look at the following resources:
+1. Create an empty repository on GitHub. Do not initialize it with a README, license, or `.gitignore`.
+2. In a terminal opened at this project folder, run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```powershell
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/aurennis-learn.git
+   git push -u origin main
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Replace `YOUR-USERNAME` with your GitHub username.
+3. In Netlify, import the GitHub repository. Netlify detects Next.js and configures the build for the app.
+4. Each later `git push` can trigger a new Netlify deploy.
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Text-based PDFs are supported; image-only scans need OCR and are not processed.
+- Study materials use local text extraction and deterministic, source-derived rules. They are not reviewed by a subject expert, so verify important details against the original document.
+- The PDF text stays in the browser until the study request is sent to this app's server route. The app does not require a third-party model key.
+- Session progress and theme are stored in this browser. The PDF text itself is not saved in browser storage.
+- The project has no account system or cloud-synced progress.

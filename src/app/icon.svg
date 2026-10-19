@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="aurennis" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a694ff"/>
+      <stop offset="1" stop-color="#5843d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#11121a"/>
+  <path d="M18 45 30 17h5l12 28h-7l-2.6-6.5H27.4L25 45h-7Zm11.7-12h5.3l-2.7-7-2.6 7Z" fill="url(#aurennis)"/>
+  <path d="M14 50h36" stroke="#a694ff" stroke-linecap="round" stroke-opacity=".6" stroke-width="2"/>
+</svg>

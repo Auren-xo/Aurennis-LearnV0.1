@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aurennis Learn v0.1",
-  description: "AI study companion for PDF-based learning and revision.",
+  title: "Aurennis Learn",
+  description: "A focused study companion for learning from your course PDFs.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

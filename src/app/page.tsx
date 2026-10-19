@@ -6,7 +6,6 @@ import confetti from "canvas-confetti";
 import {
   ArrowRight,
   BookOpen,
-  BrainCircuit,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
@@ -430,10 +429,10 @@ export default function Home() {
         <header className="mb-6 flex flex-col gap-4 rounded-[28px] border p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between" style={{ background: "var(--surface)", borderColor: "var(--border)", boxShadow: "var(--shadow)" }}>
           <div className="flex items-center gap-3">
             <div className="flex size-11 items-center justify-center rounded-2xl" style={{ background: "linear-gradient(135deg, var(--accent-soft), rgba(171,147,255,0.35))" }}>
-              <BrainCircuit color="var(--accent)" />
+              <BookOpen color="var(--accent)" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>Aurennis</p>
+              <p className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>Aurennis Learn</p>
               <h1 className="text-xl font-semibold">v0.1 study companion</h1>
             </div>
           </div>
